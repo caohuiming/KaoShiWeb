@@ -1,0 +1,1129 @@
+﻿@charset "utf-8";
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fieldset, lengend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0
+}
+
+body, button, input, select, textarea {
+    font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif
+}
+
+h1 {
+    font-size: 18px
+}
+
+h2 {
+    font-size: 16px
+}
+
+h3 {
+    font-size: 14px
+}
+
+h4, h5, h6 {
+    font-size: 100%
+}
+
+address, cite, dfn, em, var {
+    font-style: normal
+}
+
+code, kbd, pre, samp, tt {
+    font-family: "Courier New", Courier, monospace
+}
+
+small {
+    font-size: 12px
+}
+
+ul, ol {
+    list-style: none
+}
+
+a {
+    text-decoration: none
+}
+
+    a:hover {
+        text-decoration: underline
+    }
+
+abbr[title], acronym[title] {
+    border-bottom: 1px dotted;
+    cursor: help
+}
+
+q:before, q:after {
+    content: ''
+}
+
+legend {
+    color: #000
+}
+
+fieldset, img {
+    border: 0
+}
+
+button, input, select, textarea {
+    font-size: 100%
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+hr {
+    border: 0;
+    height: 1px
+}
+
+html {
+    overflow-y: scroll
+}
+
+body {
+    font-size: 16px;
+    color: #333;
+    background: #fafafa
+}
+
+a {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0)
+}
+
+.clr {
+    clear: both;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-size: 0;
+    line-height: 0
+}
+
+.cnzz {
+    display: none
+}
+
+.mt_top {
+    margin-top: 43px
+}
+
+.mt_10 {
+    margin-top: 10px
+}
+/*顶部*/
+.top {
+    height: 34px;
+    background: #39c;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    padding: 9px 0 0
+}
+
+.toplock {
+    position: inherit;
+}
+
+.top h1 {
+    float: left;
+    width: 72%;
+    text-align: center;
+    float: left;
+    font-size: 20px;
+    float: left;
+    color: #fff;
+    padding-top: 2px
+}
+
+.top .b {
+    float: left;
+    width: 14%;
+    margin: 0
+}
+
+    .top .b a {
+        padding-left: 8px
+    }
+
+.top .h {
+    float: right;
+    width: 14%;
+    text-align: right;
+    margin: 0
+}
+
+    .top .h a {
+        padding-right: 8px
+    }
+/*底部*/
+.end {
+    padding: 8px;
+    border-top: 1px solid #ddd;
+    color: gray;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px
+}
+
+    .end a {
+        color: gray
+    }
+/*主页*/
+.home {
+    background: #fff;
+}
+
+    .home .help {
+        padding: 10px;
+        border-bottom: 1px solid #ccc
+    }
+
+    .home li {
+        float: left;
+        width: 33%
+    }
+
+        .home li a {
+            text-align: center;
+            font-size: 23px;
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+            padding-top: 12px;
+            color: #999;
+            background: #fff;
+            border-bottom: 1px solid #eee
+        }
+
+            .home li a i {
+                display: block;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 30px;
+                color: #aaa
+            }
+
+            .home li a.current {
+                color: #000;
+                background-color: #FFFFD9;
+                border-bottom: 1px solid #FC9
+            }
+
+                .home li a.current i {
+                    color: #999;
+                }
+
+        .home li.b2 {
+            width: 34%
+        }
+
+            .home li.b2 a {
+                border-left: 1px solid #eee;
+                border-right: 1px solid #eee
+            }
+
+.home2screen {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #000;
+    background: #F8F8F7 url(images/home2screen_bg.png) no-repeat center bottom;
+    padding: 2px 0 8px;
+    line-height: 20px;
+    font-size: 14px;
+    border-top: 1px solid #999
+}
+
+    .home2screen .help {
+        margin: 0 10px;
+    }
+
+    .home2screen b {
+        color: red;
+    }
+
+    .home2screen img {
+        height: 20px
+    }
+/*其他*/
+.client {
+    border-bottom: 1px solid #ccc
+}
+
+    .client a {
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        padding: 12px 0;
+        color: green;
+        background: #fff;
+        text-decoration: none
+    }
+/*下载*/
+.down {
+    background: #fff;
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc
+}
+
+    .down .file {
+        font-size: 26px;
+        text-decoration: none;
+        padding-bottom: 20px;
+        width: 280px;
+        margin: 0 auto;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px
+    }
+
+        .down .file a {
+            color: red
+        }
+
+    .down .help {
+        color: #666;
+        line-height: 22px;
+        font-size: 14px;
+        width: 260px;
+        margin: 0 auto
+    }
+/*404*/
+.notfound {
+    margin: -26px 6px 0px
+}
+
+    .notfound li {
+        line-height: 48px;
+        padding-left: 20px
+    }
+
+    .notfound i {
+        font-style: normal
+    }
+
+    .notfound b {
+        font-size: 20px;
+        color: red;
+        line-height: 25px
+    }
+/*列表*/
+.item {
+}
+
+    .item .help {
+        border-bottom: 1px solid #ccc;
+        background: #fff;
+        padding: 10px 10px 0;
+        height: 50px
+    }
+
+        .item .help .icon {
+            float: left;
+            width: 50px;
+        }
+
+            .item .help .icon img {
+                width: 40px;
+                height: 40px;
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border-radius: 6px
+            }
+
+        .item .help .text {
+            float: left;
+            font-size: 22px;
+            font-weight: bold
+        }
+
+            .item .help .text i {
+                display: block;
+                color: #666;
+                font-size: 13px;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 22px;
+                text-indent: 2px
+            }
+
+    .item .list {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        background: #fff
+    }
+
+        .item .list li {
+            line-height: 46px;
+            font-size: 16px
+        }
+
+            .item .list li a {
+                margin: 0 0 0 45px;
+                display: block;
+                border-top: 1px solid #ddd;
+                color: #222;
+                text-decoration: none;
+                background-image: url(images/goto.png);
+                background-position: right center;
+                background-repeat: no-repeat;
+                font-weight: bold
+            }
+
+                .item .list li a.first {
+                    border-top: none
+                }
+
+            .item .list li img, .item .list li i {
+                float: left;
+                margin: 10px 0 0 10px;
+                width: 26px;
+                height: 26px;
+                -webkit-border-radius: 13px;
+                -moz-border-radius: 13px;
+                border-radius: 13px
+            }
+
+            .item .list li i {
+                line-height: 26px;
+                text-align: center;
+                background: #999;
+                color: #fff;
+                font-weight: bold;
+                font-size: 14px
+            }
+
+            .item .list li em {
+                float: left;
+                margin: 11px 0 0 12px;
+                width: 24px;
+                height: 24px;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+                text-align: center;
+                line-height: 24px;
+                color: #fff;
+                font-size: 14px;
+                background-color: #69B6DA
+            }
+
+    .item .nobordertop {
+        border-top: none
+    }
+/*练习*/
+.study {
+    padding: 12px 5px 6px;
+    background: #fff
+}
+
+    .study .title {
+        font-size: 18px;
+        font-family: 黑体;
+        color: #000;
+        line-height: 22px
+    }
+
+    .study .file {
+        text-align: center
+    }
+
+        .study .file img {
+            margin-top: 8px;
+            max-width: 100%;
+            max-height: 180px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px
+        }
+
+    .study .items {
+        margin-top: 8px;
+        border: 1px solid #ddd;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        background: #fff
+    }
+
+        .study .items li {
+            line-height: 28px;
+            padding: 3px 10px;
+            border-top: 1px solid #ddd;
+            -webkit-tap-highlight-color: rgba(255, 0, 0, 0)
+        }
+
+            .study .items li.first {
+                border-top: none
+            }
+
+            .study .items li label {
+                vertical-align: middle
+            }
+
+                .study .items li label div {
+                    height: 1px;
+                    margin-top: -28px;
+                    height: 28px
+                }
+
+            .study .items li input {
+                vertical-align: middle;
+                height: 18px;
+                width: 18px
+            }
+
+    .study #answer {
+        background-color: #F9f9f9;
+        line-height: 28px
+    }
+
+        .study #answer i {
+            color: blue
+        }
+
+        .study #answer b {
+            padding-left: 6px;
+            color: red
+        }
+
+            .study #answer b.ok {
+                color: green
+            }
+
+            .study #answer b.none {
+                color: gray
+            }
+
+        .study #answer span {
+            float: right;
+            padding-left: 10px;
+            border-left: 1px solid #ddd
+        }
+
+        .study #answer #btn5 {
+            color: green
+        }
+
+    .study #explain {
+        color: #900;
+        background-color: #FFFFE1;
+        font-size: 14px;
+        padding: 5px 10px;
+        line-height: 20px
+    }
+
+        .study #explain .true {
+            font-size: 16px;
+            color: #555
+        }
+
+            .study #explain .true i {
+                color: red
+            }
+
+    .study .btn {
+        margin-top: 5px;
+        height: 36px;
+        width: 310px;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+        .study .btn button {
+            -webkit-appearance: none;
+            padding: 6px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            color: #666;
+            background-color: #FFF;
+            margin-right: 1px;
+            font-size: 18px
+        }
+
+        .study .btn .btnleft {
+            float: left;
+            width: 25%;
+            text-align: left
+        }
+
+        .study .btn .btncenter {
+            float: left;
+            width: 50%;
+            text-align: center
+        }
+
+        .study .btn .btnright {
+            float: right;
+            width: 25%;
+            text-align: right
+        }
+
+    .study #links {
+        display: none
+    }
+    /*进入考场*/
+    .study .inbottom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        width: 100%;
+        background: #fff;
+        border-top: 1px solid #ccc;
+        padding: 1px 0;
+    }
+
+        .study .inbottom button {
+            padding: 13px 10px;
+            border: 1px solid #fff;
+            color: #333;
+            background-color: #FFF;
+            margin-right: 1px;
+            font-size: 16px;
+            font-family: 黑体
+        }
+
+        .study .inbottom .btnleft {
+            float: left;
+            width: 25%;
+            text-align: left
+        }
+
+            .study .inbottom .btnleft button {
+                border-right: 1px solid #ddd;
+            }
+
+        .study .inbottom .btncenter {
+            float: left;
+            width: 50%;
+            text-align: center;
+            color: #999;
+        }
+
+        .study .inbottom .btnright {
+            float: right;
+            width: 25%;
+            text-align: right
+        }
+
+            .study .inbottom .btnright button {
+                border-left: 1px solid #ddd;
+            }
+    /**/
+    .study .subnav {
+        margin: -13px -5px 10px;
+    }
+
+        .study .subnav li {
+            float: left;
+            width: 50%;
+            background-color: #6AB5D9
+        }
+
+            .study .subnav li a {
+                display: block;
+                text-align: center;
+                font-size: 18px;
+                line-height: 36px;
+                color: yellow;
+                text-decoration: none
+            }
+
+                .study .subnav li a.icon {
+                    border-left-width: 1px;
+                    border-left-style: solid;
+                    border-left-color: #A2D0FF;
+                }
+
+                .study .subnav li a b {
+                    font-weight: normal;
+                    color: #fff;
+                }
+/*换题*/
+.jumpto {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    width: 200px;
+    line-height: 40px;
+    background: #fff;
+    padding: 0 15px 10px;
+    border: 3px solid #ccc;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px
+}
+
+    .jumpto .jumpto_num {
+        -webkit-appearance: none;
+        padding: 4px 6px;
+        width: 100px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        color: #666;
+        background-color: #FFF;
+        margin-right: 1px;
+        font-size: 16px
+    }
+
+    .jumpto .jumpto_btn {
+        -webkit-appearance: none;
+        padding: 6px 6px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        color: #666;
+        background-color: #f5f5f5;
+        margin-right: 1px;
+        font-size: 16px
+    }
+
+    .jumpto .jumpto_close {
+        float: right;
+        padding: 0 5px;
+        margin: 3px 0 0 0;
+        font-size: 28px;
+        line-height: 28px;
+        text-align: right;
+        color: red;
+        cursor: pointer
+    }
+
+    .jumpto .jumpto_count {
+        color: gray;
+        font-size: 14px
+    }
+/*文章*/
+.archive {
+}
+
+    .archive .content {
+        padding: 10px 15px;
+        line-height: 28px;
+        font-size: 18px
+    }
+
+        .archive .content p {
+            margin: 0;
+            padding: 0
+        }
+
+    .archive .back {
+        margin: 10px 15px
+    }
+
+        .archive .back a {
+            display: block;
+            background: #F60;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            line-height: 42px;
+            font-size: 24px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            color: #000
+        }
+    /*进入考场*/
+    .archive .goexam {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        width: 100%;
+        background: #f60;
+        text-align: center;
+        font-size: 22px;
+        line-height: 48px;
+        text-decoration: none;
+    }
+
+        .archive .goexam a {
+            color: #fff;
+            font-weight: bold
+        }
+    /*试题列表*/
+    .archive .shiti {
+        border-bottom: 1px solid #ddd
+    }
+
+        .archive .shiti .t {
+            font-size: 16px;
+            line-height: 22px;
+            padding: 4px 0;
+        }
+
+        .archive .shiti .i {
+            padding: 0 15px;
+        }
+
+        .archive .shiti ul li {
+            padding: 0 15px;
+            font-size: 14px;
+            color: #666;
+            line-height: 20px;
+        }
+
+        .archive .shiti .a {
+            color: green;
+            font-size: 16px;
+            padding: 0 15px 2px;
+        }
+    /*试题分析*/
+    .archive .jieshi {
+        font-size: 16px;
+    }
+
+        .archive .jieshi h1 {
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+            line-height: 26px;
+        }
+
+        .archive .jieshi li {
+            line-height: 30px;
+            color: #777
+        }
+
+        .archive .jieshi .file {
+            padding-top: 6px;
+        }
+
+            .archive .jieshi .file img {
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+                width: 100%;
+            }
+
+        .archive .jieshi .answer {
+            color: green;
+            font-size: 18px;
+        }
+
+        .archive .jieshi .help {
+            background: #eee;
+            padding: 4px 8px;
+            color: blue;
+            line-height: 24px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+        }
+/*随机文章列表*/
+.rlist {
+    background: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 0 10px;
+}
+
+    .rlist li {
+        line-height: 32px;
+        border-top: 1px solid #eee;
+        font-size: 14px;
+    }
+
+        .rlist li.first {
+            border-top: none;
+        }
+
+        .rlist li a {
+            color: #333;
+            font-weight: normal;
+            display: block;
+        }
+
+        .rlist li span {
+            float: right;
+            color: #666;
+            font-size: 12px
+        }
+/*分页列表*/
+.archive .artlist {
+}
+
+    .archive .artlist li {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+        .archive .artlist li h3 {
+            font-weight: normal
+        }
+
+        .archive .artlist li span {
+            float: right;
+            color: #999;
+        }
+
+    .archive .artlist a {
+        color: #000
+    }
+
+        .archive .artlist a:hover {
+            color: red
+        }
+/*分页链接*/
+.archive .artpage {
+    text-align: center;
+    margin-top: 10px;
+}
+
+    .archive .artpage a {
+        background: #f6f6f6;
+        border: 1px solid #bbb;
+        color: green;
+        padding: 4px 7px;
+        margin: 0 10px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+/*kaoshi*/
+.kaoshi {
+}
+
+    .kaoshi .node {
+        line-height: 22px;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        background: #fff;
+    }
+
+        .kaoshi .node h2 {
+            font-size: 16px;
+            margin: 0;
+            padding: 0 0 8px;
+        }
+
+        .kaoshi .node .img {
+            text-align: center;
+            padding: 0 0 5px;
+        }
+
+            .kaoshi .node .img img {
+                max-width: 92%;
+                max-height: 200px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                border-radius: 3px
+            }
+
+        .kaoshi .node ul {
+            margin: 0;
+            padding: 0 10px;
+        }
+
+            .kaoshi .node ul li {
+                list-style: none;
+                font-size: 14px;
+                color: #555;
+                line-height: 20px;
+                padding: 8px 6px;
+                display: block;
+                border-bottom: 1px solid #e3e3e3;
+                cursor: pointer
+            }
+
+                .kaoshi .node ul li:first-child {
+                    border-top: 1px solid #e3e3e3;
+                }
+
+                .kaoshi .node ul li.on {
+                    color: #000;
+                    background-color: #FFFFE1;
+                }
+
+                .kaoshi .node ul li.right {
+                    color: green;
+                    background-color: #D7FFD7;
+                }
+
+                .kaoshi .node ul li.error {
+                    color: #F00;
+                    background-color: #FEE;
+                }
+
+        .kaoshi .node i {
+            font-style: normal;
+            padding: 0 10px;
+            display: block;
+            margin-top: 10px;
+        }
+
+            .kaoshi .node i b.error {
+                color: red;
+            }
+
+            .kaoshi .node i b.right {
+                color: green;
+            }
+
+            .kaoshi .node i b.undo {
+                color: #999;
+            }
+
+            .kaoshi .node i a {
+                float: right;
+                color: #00F;
+                text-decoration: none;
+            }
+
+    .kaoshi .score {
+    }
+
+    .kaoshi .btns {
+        padding: 10px 20px;
+        height: 32px;
+    }
+
+        .kaoshi .btns a {
+            text-decoration: none;
+            color: #000;
+            cursor: pointer;
+            line-height: 32px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            padding: 0 8px;
+        }
+
+        .kaoshi .btns .exam {
+            float: left;
+            border: 1px solid #ccc;
+            background: #fff;
+        }
+
+        .kaoshi .btns .reload {
+            float: right;
+            border: 1px solid #00BB3D;
+            background-color: #ECFFF1;
+            color: #090;
+            margin-right: 10px;
+        }
+
+        .kaoshi .btns .submit {
+            float: right;
+            border: 1px solid #3737FF;
+            background-color: #EEF;
+            color: #2D2DFF;
+        }
+    /*jieshi*/
+    .kaoshi .node h1 {
+        font-size: 18px;
+        margin: 0;
+        padding: 0 0 8px;
+    }
+
+    .kaoshi .node .img_jieshi {
+        text-align: center;
+        padding: 0 0 5px;
+    }
+
+        .kaoshi .node .img_jieshi img {
+            max-width: 100%;
+            max-height: 200px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px
+        }
+
+    .kaoshi .node .answer {
+        color: blue;
+        font-size: 16px;
+        line-height: 40px;
+        padding: 0 15px;
+    }
+
+    .kaoshi .node .explain {
+        padding: 8px;
+        border-top: 1px solid #ccc;
+    }
+
+        .kaoshi .node .explain b {
+            font-weight: normal;
+            color: #888;
+        }
+
+        .kaoshi .node .explain p {
+            margin: 5px 0 0;
+        }
+
+        .kaoshi .node .explain img {
+            max-width: 100%;
+        }
+/*tb*/
+.tb {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background: #fff;
+}
+
+    .tb a {
+        display: block;
+        height: 50px;
+    }
+
+    .tb .image {
+        float: left;
+        width: 20%;
+        height: 50px;
+    }
+
+        .tb .image img {
+            border: 0;
+            width: 55px;
+            height: 50px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+    .tb .title {
+        float: left;
+        display: block;
+        width: 80%;
+        height: 50px;
+        line-height: 25px;
+        color: #666;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+        .tb .title strong {
+            color: #000;
+            font-size: 16px;
+        }
+
+        .tb .title span {
+            color: red;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+    .tb .saled {
+        float: right;
+        font-size: 12px;
+        color: #999;
+        width: 66px;
+        text-align: right;
+    }

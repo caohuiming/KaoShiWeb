@@ -1,0 +1,39 @@
+.mui-content img{
+    height: 60px;
+    border-radius: 30px;
+	border: 2px solid #fff;
+}
+
+.mui-content{
+	text-align: center;
+}
+
+
+body{
+}
+
+
+.mui-content h3{
+	color: #616161;
+	padding: 5px;
+	font-size: 16px;
+}
+.mui-content h4{
+	color: #fff;
+	padding: 5px;
+}
+.mui-content button{background-color: #F2F2F2;}
+.mui-content {
+     background-color: #fff; 
+}
+
+
+.mui-btn-block {
+     margin-bottom: 0px !important; 
+}
+
+.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+     border-right: initial; 
+     border-bottom: initial; 
+}
+

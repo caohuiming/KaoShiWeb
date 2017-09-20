@@ -1,0 +1,89 @@
+	.mui-bar-top h5 {
+		padding-top: 46px;
+    color: #987F58;
+    font-size: 18px;
+	}
+	
+	.mui-bar-top h1 {
+		margin-top: 20px;
+		font-size: 25px;margin-bottom: 20px;
+			border-bottom: 1px solid #E9E4DC;
+	}
+	
+	.mui-bar-top {
+		text-align: center;
+		height: 80px;
+		background-color: #fff;
+	    border-radius: 15px;
+	}
+	
+	.mui-input-group {
+    border-radius: 15px;
+    }
+	
+
+.mui-title {
+    margin: initial !important;
+}
+
+.mui-input-row label {
+    width: 30% !important;
+    padding: 12px 30px;
+    color: #987F58;
+        font-size: 16px;
+}
+
+.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea {
+    border: 2px solid #EED5AE;
+    float: left;
+    width: 60%;
+    padding-left: 30px;
+    border-radius: 5px;
+    background-color: #F9F5EF;
+}
+
+.mui-input-group .mui-input-row {
+    height: 54px;
+        padding-top: 12px;
+}
+
+
+.mui-input-group:before {
+  
+    height: initial;
+    
+}
+
+.mui-input-group .mui-input-row:after {
+    height: initial;
+}
+
+.textinput{
+	    height: 100px !important;
+    background-color: #f9f5ef !important;
+	
+}
+
+.mui-btn-primary, input[type=submit] {
+    color: #fff;
+    border: 1px solid #987F58;
+    background-color: #987F58;
+   padding: 10px 16%;
+    border-radius: 10px;
+}
+
+.mui-btn-danger{
+       color: #987F58;
+    border: 1px solid #987f58;
+    background-color: #fff;
+    padding: 10px 16%;
+    border-radius: 10px;
+}
+.mui-input-group .mui-button-row {
+    height: 80px;
+    padding-top: 15px;
+}
+
+body{
+	    background-color: #fff;
+}

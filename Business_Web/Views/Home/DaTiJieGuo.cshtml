@@ -1,0 +1,113 @@
+﻿@{
+    ViewData["Title"] = "答题结果页";
+
+}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>答题结果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    @*<link rel="shortcut icon" href="http://cdn.c1km1.com/favicon.ico" />*@
+    <link type="text/css" href="~/css/style2.css?v=0.26" rel="stylesheet" />
+    <style type="text/css">
+        .myBtn {
+            -webkit-appearance: none;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            color: #666;
+            background-color: #FFF;
+            margin-right: 1px;
+            font-size: 18px;
+            float: right;
+            margin-right: 50px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="~/js/lightapp.js"></script>
+   </head>
+
+
+<body>
+        <div class="top">
+            <div class="b"><a href="/Home/Index"><img src="/css/2_files/back.png" height="26" width="26"></a></div>
+            <h1>答题结果</h1>
+            <div class="h"><a href="/Home/Index"><img src="/css/2_files/home.png" height="26" width="26"></a></div>
+        </div>
+    <div class="item">
+        <div class="list nobordertop">
+            <br />
+            <br />
+            <br/>
+            <br/>
+            <input type="hidden" id="hdShiJuanId" value="@Model.shiJuanId " />
+            <input type="hidden" id="hdDaTiType" value="@ViewBag.daTiType"/>
+            <div>
+                <b >试卷名称：@Model.shiJuanName </b>
+                <button class="myBtn" id="btnClearCookie" onclick="clearCookie();">清除答案，重新答题</button>
+            </div>
+            
+            <br /><br/>
+            <b>
+                答题类型：@Model.daTiType
+            </b> <br /><br />
+            <b>
+                总做题数：@Model.allNum
+            </b><br /><br />
+            <b>
+                做对题数：@Model.rightNum
+            </b> <br /><br />
+            <b style="color:red;">
+                做错试题编号如下：
+            </b><br /><br />
+                            <ul class="inhome">
+                                @foreach (var item in Model.wrongShiTiIds)
+            {
+                                    <li>
+                                        <img src="~/images/LeiBiao.png">
+                                        @if(ViewBag.daTiType==1){
+                                        <a href="/Home/ShiTiShunXuGoTo?shiJuanId=@Model.shiJuanId&shiJuanName=@Model.shiJuanName&goToShiTiId=@item&daTiType=@ViewBag.daTiType" class="km1 first"> 做错试题编号：@item</a>
+
+                                        }
+                                        else{
+                                        <a href="/Home/ShiTiSuiJiGoTo?shiJuanId=@Model.shiJuanId&shiJuanName=@Model.shiJuanName&goToShiTiId=@item&daTiType=@ViewBag.daTiType" class="km1 first"> 做错试题编号：@item</a>
+
+                                        }
+                                    </li>
+            }
+                            </ul>
+    </div>
+ </div>
+    <script src="~/js/jquery.js"></script>
+    <script type="text/javascript">
+        function clearCookie() {
+            var shiJuanId = $("#hdShiJuanId").val();
+            var daTiType = $("#hdDaTiType").val();
+            //创建FormData对象
+            var data = new FormData();
+            data.append('shiJuanId', shiJuanId);
+            data.append('daTiType', daTiType);
+            $.ajax({
+                url: '/Home/ClearCookie',
+                type: 'POST',
+                data: data,
+                cache: false,
+                contentType: false,    //不可缺
+                processData: false,    //不可缺
+                success: function (data) {
+                    if (data == "True") {
+                        window.location.href = "/Home/Index";
+                    } else {
+                        alert("清除答案失败");
+                    }
+                }
+            });
+
+        }
+    </script>
+</body>
+</html>

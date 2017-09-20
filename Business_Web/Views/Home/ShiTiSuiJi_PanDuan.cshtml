@@ -1,0 +1,292 @@
+﻿@{
+    ViewData["Title"] = "试题页";
+
+}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>试题页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="/css/mui.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/css/iconfont2.css">
+    <link rel="stylesheet" type="text/css" href="/css/iconfont3.css">
+    <link rel="stylesheet" type="text/css" href="/css/icons-extra.css">
+    <link rel="stylesheet" href="/css/index-form.css">
+    <link href="/css/video-js.css" rel="stylesheet">
+    <!-- If you'd like to support IE8 -->
+    <link rel="stylesheet" href="/css/setting.css">
+    <link rel="stylesheet" href="/css/icons-extra.css">
+    <link rel="stylesheet" type="text/css" href="/css/feedback.css" />
+
+    <link type="text/css" href="/css/2_files/style.css" rel="stylesheet">
+</head>
+<style>
+    .mui-scroll-wrapper,
+    .mui-scroll {
+        background-color: #010118;
+    }
+</style>
+<script src="js/mui.min.js "></script>
+<script src="js/jquery.js "></script>
+<script>
+    mui.init();
+
+    mui.plusReady(function () {
+
+    });
+   
+</script>
+
+<body>
+    <div class="top">
+        <div class="b"><a href="/Home/Index"><img src="/css/2_files/back.png" height="26" width="26"></a></div>
+        <h1>@ViewBag.shiJuanName 随机练习</h1>
+        <div class="h"><a href="/Home/Index"><img src="/css/2_files/home.png" height="26" width="26"></a></div>
+    </div>
+    <div class="study mt_top">
+        <input type="hidden" id="hdShiJuanId" value=@ViewBag.shiJuanId />
+        <input type="hidden" id="hdShiJuanName" value=@ViewBag.shiJuanName />
+        <input type="hidden" id="hdDaTiType" value=@ViewBag.daTiType />
+        <input type="hidden" id="hdShiJuanId" value=@ViewBag.shiJuanId />
+        <input type="hidden" id="hdMaxShiTiId" value=@ViewBag.shiTiNumEntity.maxShiTiId />
+        <input type="hidden" id="hdMinShiTiId" value=@ViewBag.shiTiNumEntity.minShiTiId />
+        <input type="hidden" id="hdShiTiId" value=@ViewBag.ShiTi.id />
+        <input type="hidden" id="hdRightDaAn" value=@ViewBag.ShiTi.daAn />
+        <input type="hidden" id="hdDoShiTiIdsString" value=@ViewBag.doShiTiIdsString />
+        <div class="title" id="title">@ViewBag.ShiTi.id/@ViewBag.shiTiNumEntity.maxShiTiId、@ViewBag.ShiTi.zhengWen</div>
+        <div class="lists">
+            <div class="file" id="file">@ViewBag.ShiTi.xuanXiang</div>
+            <ul class="items">
+                <li id="item1" class="first"><input name="answer" id="da1" type="radio" value="1" onclick="da(1,true);"> <label for="da1">A<div>&nbsp;</div></label></li>
+                <li id="item2"><input name="answer" id="da2" type="radio" value="2" onclick="da(2,true);"> <label for="da2">B<div>&nbsp;</div></label></li>
+                <li id="answer">
+                您的答案：<i style="display: none;" id="myDaAn">@ViewBag.myDaAn</i> 
+                <b class="ok" style="display: none;" id="isRight"></b>
+                </li>
+                <li id="rightDaAn" style="display: none;">
+                    <div class="true">正确答案：<i>@ViewBag.ShiTi.daAn</i></div>
+                    @ViewBag.ShiTi.daAnJieXi
+                </li>
+            </ul>
+            <div class="clr"></div>
+        </div>
+        <div class="btn">
+            <div class="btnleft"><button id="btnprev" onclick="preShiTi();">上一题</button></div>
+            <div class="btncenter"><button class="goto" onclick="goToShiTi();">选 题</button></div>
+            <div class="btnright"><button id="btnnext" onclick="nextShiTi();">下一题</button></div>
+        </div>
+        <div class="btn">
+            <div class="btncenter"><button class="goto" onclick="daTiResult();">查看答题结果</button></div>
+        </div>
+        <div class="jumpto">
+            <div class="jumpto_close">×</div>请输入题号 <i class="jumpto_count">共1311题</i><br>
+            <input name="jumpto_num" type="tel" id="jumpto_num" class="jumpto_num" onkeyup="if(/\D/.test(this.value)){alert(&#39;只能输入数字&#39;);this.value=&#39;&#39;;}">
+            <input name="jumpto_btn" class="jumpto_btn" type="button" value="查看试题" id="jumpto_btn">
+        </div>
+        <div id="links"></div>
+    </div>
+    <script src="~/js/jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var myDaAn = $("#myDaAn").text();
+            var rightDaAn = $("#hdRightDaAn").val();
+            if (myDaAn != "") {
+                $("#myDaAn").show();
+                $("#rightDaAn").show();
+                var myDaAnValue = 0;
+                if (myDaAn == "A") {
+                    myDaAnValue = 1;
+                }
+                else if (myDaAn == "B") {
+                    myDaAnValue = 2;
+                }
+                $("input[value=" + myDaAnValue + "]").attr('checked', 'true');
+                if (myDaAn == rightDaAn) {
+                    $("#isRight").text("答对了");
+                }
+                else {
+                    $("#isRight").text("答错了");
+                }
+                $("#isRight").show();
+                $("input[name='answer']").each(function () {
+                    $(this).attr("disabled", true);
+                });  
+            }
+        });
+        function da(index, status) {
+            var currentDaAn = "A";
+            switch (index) {
+                case 1: currentDaAn = "A"; break;
+                case 2: currentDaAn = "B"; break;
+                default: currentDaAn = "A"; break;
+            }
+            $("#myDaAn").text(currentDaAn);
+            $("#myDaAn").show();
+
+        }
+        function submitDaAn() {
+            var shiJuanId = $("#hdShiJuanId").val();
+            var shiTiId = $("#hdShiTiId").val();
+            var rightDaAn = $("#hdRightDaAn").val();
+            var myDaAn = $("#myDaAn").text().trim();
+            var daTiType = $("#hdDaTiType").val();
+            //创建FormData对象
+            var data = new FormData();
+            data.append('shiJuanId', shiJuanId);
+            data.append('shiTiId', shiTiId);
+            data.append('daAn', rightDaAn);
+            data.append('myDaAn', myDaAn);
+            data.append('daTiType', daTiType);
+            $.ajax({
+                url: '/Home/SaveDaAn',
+                type: 'POST',
+                data: data,
+                cache: false,
+                contentType: false,    //不可缺
+                processData: false,    //不可缺
+                success: function (data) {
+                    if (data == "True") {
+                        $("#rightDaAn").show();
+                       
+                        if (myDaAn == rightDaAn) {
+                            $("#isRight").text("答对了");
+                        }
+                        else {
+                            $("#isRight").text("答错了");
+                        }
+                        $("#isRight").show();
+                        $("input[name='answer']").each(function () {
+                            $(this).attr("disabled", true);
+                        });
+
+                    } else {
+                        alert("false");
+
+                    }
+                }
+            });
+        }
+        function nextShiTi(){
+            var shiJuanId = $("#hdShiJuanId").val();
+            var shiTiId = $("#hdShiTiId").val();
+            var shiJuanName = $("#hdShiJuanName").val();
+            var maxShiTiId = $("#hdMaxShiTiId").val();
+            var daTiType = $("#hdDaTiType").val();
+            var nShiTiId = parseInt(shiTiId);
+            var nMaxShiTiId = parseInt(maxShiTiId);
+            window.location.href = "/Home/ShiTiSuiJiNext?shiJuanId=" + shiJuanId + "&shiJuanName=" + shiJuanName + "&shiTiId=" + shiTiId + "&daTiType=" + daTiType;
+        }
+        function preShiTi() {
+            var shiJuanId = $("#hdShiJuanId").val();
+            var shiTiId = $("#hdShiTiId").val();
+            var shiJuanName = $("#hdShiJuanName").val();
+            var minShiTiId = $("#hdMinShiTiId").val();
+            var daTiType = $("#hdDaTiType").val();
+            var doShiTiIdsString = $("#hdDoShiTiIdsString").val();
+
+            var preShiTiId = shiTiId;
+            var doShiTis = doShiTiIdsString.split(",");
+            var currentIndex = 0;
+            var nShiTiId = parseInt(shiTiId);
+            var doShiTiIds = doShiTiIdsString.split(",");
+            if (doShiTis.length == 0) {
+                alert("没有更前的题了");
+                return;
+            }
+            var maxId = doShiTiIds[doShiTiIds.length - 1];
+            var minId = doShiTiIds[0];
+            var currentIndex = -1;
+            for (var i = 0; i < doShiTiIds.length; i++) {
+                if (doShiTiIds[i] == shiTiId) {
+                    currentIndex = i;
+                    break;
+                }
+            }
+            if (currentIndex == -1) {
+                preShiTiId = doShiTis[doShiTiIds.length - 1];
+            }
+            else if (currentIndex == 0) {
+                alert("没有更前的题了");
+                return;
+            }
+            else {
+                preShiTiId = doShiTis[currentIndex - 1];
+            }
+           
+            window.location.href = "/Home/ShiTiSuiJiPre?shiJuanId=" + shiJuanId + "&shiJuanName=" + shiJuanName + "&shiTiId=" + preShiTiId + "&daTiType=" + daTiType;
+        }
+        function goToShiTi() {
+            var nGoToShiTiId = 1;
+            var gotoShiTiId = prompt("请输入试题编号:", "1");
+            if (gotoShiTiId != null) {
+                var tt = /^[1-9]+[0-9]*]*$/;
+                if (tt.test(gotoShiTiId)) {
+                    nGoToShiTiId = parseInt(gotoShiTiId);
+                } else {
+                    alert("试题编号必须是正整数！");
+                    return;
+                }
+            } 
+            else {
+                return;
+            }
+            var shiJuanId = $("#hdShiJuanId").val();
+            var shiTiId = $("#hdShiTiId").val();
+            var shiJuanName = $("#hdShiJuanName").val();
+            var minShiTiId = $("#hdMinShiTiId").val();
+            var nShiTiId = parseInt(shiTiId);
+            var nMinShiTiId = parseInt(minShiTiId);
+            var maxShiTiId = $("#hdMaxShiTiId").val();
+            var nMaxShiTiId = parseInt(maxShiTiId);
+            var daTiType = $("#hdDaTiType").val();
+            if (nGoToShiTiId < nMinShiTiId || nGoToShiTiId>nMaxShiTiId) {
+                alert("您输入的试题编号不存在！");
+                return;
+            }
+            //创建FormData对象
+            var data = new FormData();
+            data.append('shiJuanId', shiJuanId);
+            data.append('goToShiTiId', nGoToShiTiId);
+            $.ajax({
+                url: '/Home/IsShiTiExist',
+                type: 'POST',
+                data: data,
+                cache: false,
+                contentType: false,    //不可缺
+                processData: false,    //不可缺
+                success: function (data) {
+                    if (data == "True") {
+                        window.location.href = "/Home/ShiTiSuiJiGoTo?shiJuanId=" + shiJuanId + "&shiJuanName=" + shiJuanName + "&goToShiTiId=" + nGoToShiTiId + "&daTiType=" + daTiType;
+                    } else {
+                        alert("您输入的试题编号不存在！");
+                    }
+                }
+            }); 
+        }
+        function daTiResult() {
+            var shiJuanId = $("#hdShiJuanId").val();
+            var shiJuanName = $("#hdShiJuanName").val();
+            var daTiType = $("#hdDaTiType").val();
+            window.location.href = "/Home/DaTiJieGuo?shiJuanId=" + shiJuanId + "&shiJuanName=" + shiJuanName + "&daTiType=" + daTiType;
+        }
+    </script>
+    <script src="/css/2_files/ca-pub-6230865249920453.js"></script>
+    <script type="text/javascript" async="" src="/css/2_files/pr.js"></script>
+    <script type="text/javascript" async="" src="/css/2_files/fjdhgdhjxgpiwgxdh.js"></script>
+    <script type="text/javascript" src="/css/2_files/zepto.min.js"></script>
+    @*<script type="text/javascript" src="/css/2_files/common.js"></script>
+    <script type="text/javascript" src="/css/2_files/lianxi.js"></script>*@
+    <script type="text/javascript" src="/css/2_files/c1km1.js"></script>
+    <script>
+        $(function () { tiku = 'c1km1'; shunxu(true); });
+    </script>
+   
+</body>
+</html>

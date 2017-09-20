@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "答题类型";
+}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>答题类型</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link type="text/css" href="~/css/style2.css?v=0.26" rel="stylesheet" />
+    @*<script src="~/js/lightapp.js"></script>*@
+    <link rel="dns-prefetch" href="//data.c1km1.com">
+</head>
+
+
+<body>
+    <div class="top">
+        <div class="b"><a href="/Home/Index"><img src="~/images/back.png" height="26" width="26" /></a></div>
+        <h1>@ViewBag.ShiJuanName</h1>
+        <div class="h"><a href="/Home/Index"><img src="~/images/home.png" height="26" width="26" /></a></div>
+    </div>
+    <div class="item mt_top">
+        <div class="help">
+            <div class="icon"><img src="~/images/ShiJuan.png"></div>
+            <div class="text">@ViewBag.ShiJuanName</div>
+            <div class="clr"></div>
+        </div>
+
+        <div class="list">
+            <ul>
+                <li><img src="~/images/shunxu.png"><a href="/Home/ShiTiShunXuNext?shiJuanId=@ViewBag.ShiJuanId&shiJuanName=@ViewBag.ShiJuanName&daTiType=1" class="first">顺序练习</a></li>
+                <li><img src="~/images/suiji.png"><a href="/Home/ShiTiSuiJiNext?shiJuanId=@ViewBag.ShiJuanId&shiJuanName=@ViewBag.ShiJuanName&daTiType=2">随机练习</a></li>
+            </ul>
+            
+        </div>
+        <input type="button" id="btnTest" value="test" style="display:none;" onclick="test();"/>
+        <script type="text/javascript">
+            function test() {
+                var currentShiTiId = 3;
+                
+                var currentIndex = 0;
+                var doShiTiIdsString = "abc";
+                
+                var doShiTiIds = doShiTiIdsString.split("");
+
+                for (var i = 0; i < doShiTiIds.length; i++) {
+                    var current = doShiTiIds[i];
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

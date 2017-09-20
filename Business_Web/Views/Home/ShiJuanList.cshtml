@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "首页";
+
+}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>试卷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link type="text/css" href="~/css/style2.css?v=0.26" rel="stylesheet" />
+    <script src="~/js/lightapp.js"></script>
+</head>
+
+
+<body>
+    <div class="top toplock">
+        <div class="b">&nbsp;</div>
+        <h1>试卷列表</h1>
+        <div class="h">&nbsp;</div>
+    </div>
+    <div class="item">
+        <div class="list nobordertop">
+            <ul class="inhome">
+            @foreach (var item in Model)
+            {
+                <li><img src="~/images/ShiJuan.png"><a href="/Home/DaTiType?shiJuanId=@item.id&shiJuanName=@item.shiJuanName" class="km1 first"> @item.shiJuanName</a></li>
+            }
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
